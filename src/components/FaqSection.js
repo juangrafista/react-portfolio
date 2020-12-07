@@ -2,7 +2,7 @@ import React from 'react'
 
 // styles
 import styled from 'styled-components'
-import { Layout, Image } from '../styles'
+import { Layout } from '../styles'
 
 const FaqSection = () => {
   return (
