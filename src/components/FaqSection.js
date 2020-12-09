@@ -4,55 +4,64 @@ import React from 'react'
 import styled from 'styled-components'
 import { Layout } from '../styles'
 
+import Toggle from './Toggle'
+
+// animation
+import { AnimateSharedLayout } from 'framer-motion'
+import { scrollReveal } from '../animation'
+import { useScroll } from './useScroll'
+
 const FaqSection = () => {
+  const [element, controls] = useScroll()
+
   return (
-    <Faq>
+    <Faq
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial='hidden'
+    >
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-      <div className='question'>
-        <h4>How Do I start?</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Reiciendis, cumque.
-          </p>
-        </div>
-        <div className='faq-line' />
-      </div>
-      <div className='question'>
-        <h4>Daily Schedule</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Reiciendis, cumque.
-          </p>
-        </div>
-        <div className='faq-line' />
-      </div>
-      <div className='question'>
-        <h4>Different Payment Methods</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Reiciendis, cumque.
-          </p>
-        </div>
-        <div className='faq-line' />
-      </div>
-      <div className='question'>
-        <h4>What products do you offer?</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Reiciendis, cumque.
-          </p>
-        </div>
-      </div>
+      <AnimateSharedLayout>
+        <Toggle title='How Do I start'>
+          <div className='answer'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reiciendis, cumque.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title='Daily Schedule'>
+          <div className='answer'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reiciendis, cumque.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title='Different Payment Methods'>
+          <div className='answer'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reiciendis, cumque.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title='What products do you offer?'>
+          <div className='answer'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reiciendis, cumque.
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   )
 }
@@ -73,11 +82,10 @@ const Faq = styled(Layout)`
     width: 100%;
   }
   .question {
-    padding: 3rem 0rem;
     cursor: pointer;
   }
   .answer {
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
     p {
       padding: 1rem 0rem;
     }
