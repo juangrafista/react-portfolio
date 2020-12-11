@@ -5,6 +5,7 @@ import ContactUs from './pages/ContactUs'
 import MovieDetail from './pages/MovieDetail'
 
 import GlobalStyle from './components/GlobalStyle'
+
 // Router
 import { Switch, Route, useLocation } from 'react-router-dom'
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className='App'>
       <GlobalStyle />
+
       <Nav />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>

@@ -7,7 +7,7 @@ const Toggle = ({ children, title }) => {
   return (
     <motion.div layout className='question' onClick={() => setToggle(!toggle)}>
       <motion.h4 layout>{title}</motion.h4>
-      <div>{toggle && children}</div>
+      <motion.div layout>{toggle && children}</motion.div>
       <div className='faq-line' />
     </motion.div>
   )
