@@ -6,6 +6,15 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
   }
+  html {
+    @media (max-width:1100px){
+      font-size:90%;
+    }
+    @media (max-width: 800px){
+
+    }
+  }
+
   body{
     background-color: #1b1b1b;
     font-family: 'Inter', sans-serif;

@@ -53,6 +53,9 @@ const ContactStyle = styled(motion.div)`
   h2 {
     color: black;
   }
+  @media (max-width: 1100px) {
+    padding: 2rem 2rem;
+  }
 `
 const Title = styled.div`
   margin-bottom: 4rem;

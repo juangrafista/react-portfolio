@@ -80,6 +80,9 @@ const Work = styled(motion.div)`
     padding: 1rem 0rem;
     color: black;
   }
+  @media (max-width: 1100px) {
+    padding: 2rem 2rem;
+  }
 `
 const Movie = styled(motion.div)`
   padding-bottom: 10rem;
